@@ -1,10 +1,19 @@
 steps:
 - name: 'gcr.io/cloud-builders/gcloud'
+  args: ['app', 'deploy', '--quiet']
+timeout: '1600s'
+
+# Install dependencies
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/my-app', '.']
+  dir: '.'
+
+# Deploy the app
+- name: 'gcr.io/cloud-builders/gcloud'
   args:
-  - functions
-  - deploy
-  - hello_world
-  - --source=.
-  - --trigger-http
-  - --runtime=python37
-  - --allow-unauthenticated
+  - 'app'
+  - 'deploy'
+  - '--image-url=gcr.io/$PROJECT_ID/my-app'
+  - '--version=[VERSION]'
+  - 'app.yaml'
+  timeout: '1600s'
