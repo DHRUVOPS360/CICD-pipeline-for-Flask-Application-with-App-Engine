@@ -1,6 +1,5 @@
 runtime: python37
 env: standard
-api_version: 1
 
 handlers:
 - url: /.*
