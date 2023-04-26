@@ -6,5 +6,5 @@ steps:
   - '--version=1'
   - '--quiet'
   - '--no-promote'
-  - 'main.py'
+  - 'app.yaml'
 timeout: '1600s'
