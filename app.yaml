@@ -1,6 +1,6 @@
 runtime: python37
+env: standard
 api_version: 1
-entrypoint: python3 main.py
 
 handlers:
 - url: /.*
