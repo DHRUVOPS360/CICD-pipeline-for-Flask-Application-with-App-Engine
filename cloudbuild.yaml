@@ -1,9 +1,10 @@
 steps:
 - name: 'gcr.io/cloud-builders/gcloud'
   args:
-  - app
-  - deploy
-  - hello_world
-  - --source=.
-  - --runtime=python37
-  - --allow-unauthenticated
+  - 'app'
+  - 'deploy'
+  - '--version=1'
+  - '--quiet'
+  - '--no-promote'
+  - 'main.py'
+timeout: '1600s'
