@@ -1,1 +1,1 @@
-# To deploy Hello World Python app to Cloud Functions using Cloud Build
+# To deploy Hello World Python app to App Engine using Cloud Build
