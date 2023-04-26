@@ -1,0 +1,7 @@
+runtime: python37
+api_version: 1
+entrypoint: python3 main.py
+
+handlers:
+- url: /.*
+  script: auto
